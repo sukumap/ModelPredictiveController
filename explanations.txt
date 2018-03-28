@@ -1,0 +1,15 @@
+
+
+a) Student describes their model in detail. This includes the state, actuators and update equations.
+The Model used in this project is a MPC. The model defines a set of states, variables and constraints. It uses Ipopt to find the next best step by minimizing cost function. This way an optimal set of steering angle and acceleration is provided back by the model to simulator
+
+b) Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
+
+I chose a value of 10 because this limits the number of vars to a minimum amount and also gives a good prediction. Increasing the value increases the computation which decreases the accuracy. A Delta of 100 msec is an optimal value as the time intervals are not too far apart.
+
+c) Polynomial Fitting and MPC Preprocessing
+Convert all way points to car co-ordinates based on Assignment Videos. This follows the explanation given in https://discussions.udacity.com/t/mpc-car-space-conversion-and-output-of-solve-intuition/249469/12.
+
+d) Model Predictive Control with Latency
+
+For handling the delay, the MPC controller inputs are changed to calculate the inputs 100 milliseconds with the equations given in the class.
